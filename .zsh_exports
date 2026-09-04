@@ -1,0 +1,10 @@
+export ZSH="$HOME/.oh-my-zsh"
+export SDKMAN_DIR="$HOME/.sdkman"
+# Desabilita MCP servers integrados do claude.ai (Gmail, Google Calendar, Vercel, Sentry)
+export ENABLE_CLAUDEAI_MCP_SERVERS=false
+export AWS_PROFILE="solu/production"
+# 1Password shell plugin (aws via op)
+export OP_PLUGIN_ALIASES_SOURCED=1
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+# export CLOUDSDK_PYTHON=/opt/homebrew/opt/python@3.13/libexec/bin/python
+

@@ -1,0 +1,8 @@
+vai-aws() {
+  op plugin init aws
+}
+
+vai-amnion() {
+  /Applications/Godot.app/Contents/MacOS/Godot --path /Users/fernandoolle/Projects/personal/games/wanna-be-game/game
+}
+

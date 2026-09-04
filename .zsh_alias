@@ -1,0 +1,8 @@
+alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
+alias lg="lazygit"
+alias vim="nvim"
+alias lid-awake='sudo pmset -a disablesleep 1'
+alias lid-normal='sudo pmset -a disablesleep 0'
+# Claude Code com injeção de secrets via 1Password
+# alias claude='$HOME/.local/bin/1claude'
+

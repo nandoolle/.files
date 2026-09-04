@@ -1,0 +1,35 @@
+# Ignore everything
+*
+.*
+
+# But not these files/directories...
+!.gitignore
+!.zshrc
+!.zsh_functions
+!.zsh_exports
+!.zsh_alias
+
+# Reincluir .config só para os subdiretórios listados
+!.config/
+.config/*
+!.config/nvim/
+!.config/nvim/**
+!.config/ZMK/
+!.config/ZMK/**
+!.config/ghostty/
+!.config/ghostty/**
+!.config/vim/
+!.config/vim/**
+!.config/karabiner/
+!.config/karabiner/**
+
+# Prevent accidentally committing sensitive files in .config
+.config/**/*.key
+.config/**/*.pem
+.config/**/secrets.*
+.config/**/*secret*
+.config/**/*password*
+.config/**/*credential*
+.config/**/.DS_Store*
+.config/**/*.bak
+.config/karabiner/automatic_backups/
