@@ -6,7 +6,6 @@ vim.o.guicursor = "n-v-c:block-Cursor"
 vim.o.mousescroll = "ver:3,hor:0"
 vim.o.guicursor = "i:blinkon100"
 vim.o.spelloptions = "camel"
-vim.o.spelloptions = "kebab"
 vim.o.winborder = "rounded"
 vim.g.maplocalleader = ","
 vim.o.termguicolors = true
