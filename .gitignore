@@ -20,6 +20,8 @@
 !.config/ghostty/**
 !.config/vim/
 !.config/vim/**
+!.config/tmux/
+!.config/tmux/**
 !.config/karabiner/
 !.config/karabiner/**
 
@@ -33,3 +35,4 @@
 .config/**/.DS_Store*
 .config/**/*.bak
 .config/karabiner/automatic_backups/
+

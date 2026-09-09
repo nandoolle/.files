@@ -9,7 +9,7 @@ font-feature = -liga
 font-feature = -dlig
 
 # Theme settings
-theme = "Firefly Traditional"
+theme = "TokyoNight Night"
 
 # Cursor settings
 cursor-style = underline
@@ -19,16 +19,19 @@ cursor-color = #999
 cursor-style = block
 
 # Background settings
-background-opacity = 0.8
+background-opacity = 0.9
 background-blur-radius = 10
 
 # Window settings
-window-theme=system
-window-padding-x = 8
+# window-theme=system
+window-padding-x = 12
+window-padding-y = 10
+window-padding-balance = true
+# window-padding-color = extend
 window-save-state = always
 window-vsync = true
 window-colorspace = display-p3
-unfocused-split-opacity = 0.5
+# unfocused-split-opacity = 0.5
 quit-after-last-window-closed = true
 
 # Splits settings
@@ -37,12 +40,10 @@ focus-follows-mouse = true
 split-divider-color = #333333
 
 # MacOS Settings
-macos-titlebar-style = tabs
-macos-titlebar-proxy-icon = visible
+macos-titlebar-style = hidden
 shell-integration-features = true
 shell-integration-features = no-cursor
 
-theme = mocha.conf
 keybind = shift+enter=text:\n
 
 
@@ -51,3 +52,18 @@ keybind = cmd+alt+h=goto_split:left
 keybind = cmd+alt+j=goto_split:down
 keybind = cmd+alt+k=goto_split:up
 keybind = cmd+alt+l=goto_split:right
+
+# tmux windows via Cmd: Ghostty sends "prefix + key" (prefix C-Space = \x00).
+# Overrides Ghostty's own tab shortcuts (new_tab/close_surface/goto_tab).
+keybind = cmd+t=text:\x00c
+keybind = cmd+w=text:\x00&
+keybind = cmd+digit_1=text:\x001
+keybind = cmd+digit_2=text:\x002
+keybind = cmd+digit_3=text:\x003
+keybind = cmd+digit_4=text:\x004
+keybind = cmd+digit_5=text:\x005
+keybind = cmd+digit_6=text:\x006
+keybind = cmd+digit_7=text:\x007
+keybind = cmd+digit_8=text:\x008
+keybind = cmd+digit_9=text:\x009
+
