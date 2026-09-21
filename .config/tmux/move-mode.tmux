@@ -4,7 +4,7 @@
 # Escape steps back one level, to root from MOVE. The active table shows up
 # in the status bar via #{client_key_table}.
 #
-#   MOVE        hjkl panes | HL windows | JK sessions | W window | P pane | R resize
+#   MOVE        hjkl panes | HL windows | JK sessions | W/P/R submodes (either case)
 #   MOVE-PANE   hk/jl reorder | HL to prev/next window | J to session | K break out
 #   MOVE-WINDOW hl reorder | J to another session | K to a new session
 #   RESIZE      hjkl one cell per press
@@ -25,8 +25,11 @@ bind -T move L next-window
 bind -T move J switch-client -n
 bind -T move K switch-client -p
 bind -T move P set -g key-table move-pane
+bind -T move p set -g key-table move-pane
 bind -T move W set -g key-table move-window
+bind -T move w set -g key-table move-window
 bind -T move R set -g key-table move-resize
+bind -T move r set -g key-table move-resize
 
 # MOVE-PANE: rearrange the current pane instead of moving the cursor.
 # tmux has no directional pane targets, so h/k and j/l walk the pane order.
