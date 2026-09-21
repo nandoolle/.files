@@ -3,6 +3,7 @@
 ZSH_THEME="robbyrussell"
 
 path=(
+  $PNPM_HOME/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
   $HOME/.asdf/shims
@@ -29,4 +30,3 @@ do
 done
 
 eval "$(zoxide init zsh)"
-

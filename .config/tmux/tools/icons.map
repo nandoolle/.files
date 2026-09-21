@@ -1,0 +1,30 @@
+# Process name -> devicons key. The left side is what #{pane_current_command}
+# reports; the right side is an extension or filename devicons indexes.
+#
+# A third column overrides the generated colour. Prefix the key with "=" to
+# give a literal glyph instead, for tools devicons does not index.
+#
+# Regenerate with: tools/gen-icons.py
+node          js
+deno          js
+bun           js
+python        py
+python3       py
+ipython       py
+ruby          rb
+irb           rb
+go            go
+cargo         rs
+rustc         rs
+git           git
+lazygit       git
+nvim          vim
+vim           vim
+zsh           zsh
+bash          sh
+fish          fish
+lua           lua
+docker        dockerfile  #2496ed
+psql          sql
+sqlite3       sql
+ssh           =󰣀          #7aa2f7

@@ -27,5 +27,8 @@ vim.o.listchars = table.concat({
 }, ",")
 vim.g.NERDTreeShowHidden = 1
 vim.treesitter.language.register("bash", "zsh")
+-- Terminal title "file:line", read by the tmux status bar via #{pane_title}
+vim.o.title = true
+vim.o.titlestring = "%t:%l"
 
 return {}

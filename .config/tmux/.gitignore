@@ -1,3 +1,6 @@
 *.bak*
 .DS_Store
 plugins/
+
+# Downloaded devicons data, refetched by tools/gen-icons.py
+tools/.devicons-cache.lua
