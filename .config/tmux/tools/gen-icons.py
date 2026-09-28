@@ -6,7 +6,7 @@ runs at tmux runtime: the output is plain formats with no #() in it.
 
 Usage: tools/gen-icons.py [--offline]
 """
-import re, sys, pathlib, urllib.request
+import re, sys, pathlib, unicodedata, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CACHE = ROOT / "tools" / ".devicons-cache.lua"
@@ -51,6 +51,15 @@ def read_map():
     return rows
 
 
+def two_cols(glyph):
+    """Pad narrow glyphs: a tab must not change width when its command does,
+    since no hook refits it then (tools/fit-tabs.sh counts widths the same way)."""
+    c = glyph[0]
+    wide = (unicodedata.east_asian_width(c) in "WF"
+            or 0xE000 <= ord(c) < 0xF900 or 0xF0000 <= ord(c) < 0x110000)
+    return glyph if wide else glyph + " "
+
+
 def chain(entries, value_of, inner):
     """Build #{?cond,a,b} nesting. Commas inside a branch must be escaped as #,."""
     out = inner
@@ -76,7 +85,7 @@ def main():
         colors.append((cmd, override or color))
 
     icon_chain = "#{?$tn_is_claude,%s,%s}" % (
-        CLAUDE_ICON, chain(icons, lambda v: v, FALLBACK_ICON))
+        two_cols(CLAUDE_ICON), chain(icons, two_cols, two_cols(FALLBACK_ICON)))
     color_chain = "#{?$tn_is_claude,%s,%s}" % (
         CLAUDE_COLOR, chain(colors, lambda v: v, FALLBACK_COLOR))
 

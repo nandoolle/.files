@@ -69,12 +69,11 @@ mkdir -p ~/.menunotes.tmux/notes && git -C ~/.menunotes.tmux/notes init
 
 Tabs stretch to fill the bar. tmux's `#{pN:}` padding takes a literal number
 and never an expression, so the width cannot be computed at render time:
-`tokyo-night.conf` ships a `#{p@W:}` placeholder, and `tools/fit-tabs.sh`
-rewrites the two `window-status-*` options from a stashed pristine template.
+`tokyo-night.conf` ships a `@W` placeholder, and `tools/fit-tabs.sh`
+rewrites the two `window-status-*` options with the width filled in.
 
-It is not a daemon. tmux itself runs it, from three hooks only --
-`window-linked`, `window-unlinked` and `client-resized` -- plus once at
-startup. It takes about 0.2s and exits.
+It is not a daemon. tmux itself runs it from hooks, when windows, clients or
+the session name change, plus once at startup. It takes about 0.2s and exits.
 
 Left click on a tab selects it; middle click closes it.
 
