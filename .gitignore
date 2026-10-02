@@ -24,6 +24,10 @@
 !.config/tmux/**
 !.config/karabiner/
 !.config/karabiner/**
+!.config/sesh/
+!.config/sesh/**
+!.config/gh-dash/
+!.config/gh-dash/**
 
 # Prevent accidentally committing sensitive files in .config
 .config/**/*.key
