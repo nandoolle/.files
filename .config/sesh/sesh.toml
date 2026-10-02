@@ -1,0 +1,27 @@
+#:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
+blacklist = ["notes"]
+
+[[session]]
+name = "nvim"
+path = "~/.config/nvim"
+startup_command = "nvim"
+
+[[session]]
+name = "tmux"
+path = "~/.config/tmux"
+startup_command = "nvim tmux.conf"
+
+[[session]]
+name = "zsh"
+path = "~"
+startup_command = "nvim -c 'lua Snacks.explorer({ hidden = true })'"
+
+[[session]]
+name = "opensource"
+path = "~/Projects/personal/opensource"
+startup_command = "claude"
+
+[[session]]
+name = "solu"
+path = "~/Projects/solu"
+startup_command = "claude"

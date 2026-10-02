@@ -27,3 +27,4 @@ bind -T ai t set -g key-table root \; run-shell -b "#{@ai_dir}/rename-tabs.sh"
 bind -T ai s set -g key-table root \; run-shell -b "#{@ai_dir}/sync.sh"
 bind -T ai m set -g key-table root \; command-prompt -I "#{@ai_model}" \
   -p "model (vazio = padrao):" "set -g @ai_model '%%'"
+
