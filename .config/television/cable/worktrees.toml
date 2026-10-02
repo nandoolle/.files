@@ -1,0 +1,13 @@
+[metadata]
+name = "worktrees"
+description = "Worktrees in .claude/worktrees/ of the current repo"
+requirements = ["git"]
+
+[source]
+# Main repo root (also from a subdir or from inside a worktree); outside git, the PWD.
+command = "root=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null) && root=${root%/.git} || root=$PWD; for d in \"$root\"/.claude/worktrees/*/; do [ -d \"$d\" ] && echo \"${d%/}\"; done"
+display = "{split:/:-1}"
+output = "{}"
+
+[preview]
+command = "cd '{}' && git -c color.status=always status -sb && echo && git log --oneline --color=always -15"

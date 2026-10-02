@@ -28,6 +28,8 @@
 !.config/sesh/**
 !.config/gh-dash/
 !.config/gh-dash/**
+!.config/television/
+!.config/television/**
 
 # Prevent accidentally committing sensitive files in .config
 .config/**/*.key
