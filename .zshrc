@@ -7,6 +7,7 @@ path=(
   $HOME/.local/bin
   $HOME/.cargo/bin
   $HOME/.asdf/shims
+  $HOME/.npm-global/bin
   $path
 )
 plugins=(
@@ -20,13 +21,24 @@ plugins=(
 )
 
 for script in \
+  $ZSH/oh-my-zsh.sh \
   $HOME/.zsh_alias \
   $HOME/.zsh_functions \
   $HOME/.opam/opam-init/init.zsh \
-  $SDKMAN_DIR/bin/sdkman-init.sh \
-  $ZSH/oh-my-zsh.sh
+  $SDKMAN_DIR/bin/sdkman-init.sh
 do
   [[ -s "$script" ]] && source "$script"
 done
 
 eval "$(zoxide init zsh)"
+
+
+# bun completions
+[ -s "/Users/fernandoolle/.bun/_bun" ] && source "/Users/fernandoolle/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
