@@ -44,6 +44,15 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   end,
 })
 
+-- Treesitter markdown queries conceal ``` fences and inline markup; keep raw text visible
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("markdown_no_conceal"),
+  pattern = { "markdown", "rmd" },
+  callback = function()
+    vim.opt_local.conceallevel = 0
+  end,
+})
+
 -- add empty newline before EOF
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup("add_empty_new_line_at_eof"),
